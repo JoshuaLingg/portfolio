@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 20px 24px 0px 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.gradient {
+  background-image: 
+    radial-gradient(at 10% 11%, rgb(32, 32, 32) 0px, transparent 50%),
+    radial-gradient(at 92% 29%, rgb(37, 34, 34) 0px, transparent 70%),
+    radial-gradient(at 10% 96%, rgb(17, 10, 17) 0px, transparent 90%),
+    radial-gradient(at 92% 20%, rgb(0, 0, 0) 0px, transparent 80%),
+    radial-gradient(at 79% 83%, rgb(19, 19, 19) 0px, transparent 50%);
+
+}
+
+.content {
+  @apply text-center text-2xl px-40 md:px-20 leading-9
+}
+
+@media screen and (max-width:750px) {
+  .content {
+    @apply px-20
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media screen and (max-width: 710px) {
+  .container {
+    @apply mt-[150px]
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    @apply mt-[200px]
+  }
 }
